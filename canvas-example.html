@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML canvas tag.</canvas>
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+let rect = c.getBoundingClientRect();
+
+// increase the actual size of our canvas
+c.width = rect.width * 3;
+c.height = rect.height * 3;
+
+// ensure all drawing operations are scaled
+ctx.scale(3, 3);
+
+c.style.width = rect.width + 'px';
+c.style.height = rect.height + 'px';
+ctx.beginPath();
+ctx.arc(95,50,40,0,2*Math.PI);
+ctx.stroke();
+</script> 
+
+</body>
+</html>
